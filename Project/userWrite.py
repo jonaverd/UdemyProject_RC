@@ -37,16 +37,29 @@ def create_recipe():
         print(f"[Info] introduce «cancelar» para salir")
         filename = input("[Entrada] introduce un nombre para crear: ")
 
+        # Comprobamos si ya existe
+        possible_path = str(Path(category_selected, filename + ".txt")).lower()
+        possible_list = list(map(lambda x: str(x).lower(), list_recipes))
+
         # recetas
-        while not validate_name(filename) or filename == "cancelar":
+        while not validate_name(filename) or filename == "cancelar" or possible_path in possible_list:
+
+            # Comprobamos si ya existe
+            possible_path = str(Path(category_selected, filename + ".txt")).lower()
+            possible_list = list(map(lambda x: str(x).lower(), list_recipes))
+
             if filename == "cancelar":
                 break
+
             clean()
             print(f">> Crear Receta >>")
             print(f"[Info] leyendo recetas en {category_selected}\n")
             show_recipes(list_recipes)
             print(f"[Info] introduce «cancelar» para salir")
-            filename = input(f"[Error] el nombre '{filename}' no es valido. Vuelve a intentarlo: ")
+            if not validate_name(filename):
+                filename = input(f"[Error] el nombre '{filename}' no es valido. Vuelve a intentarlo: ")
+            elif possible_path in possible_list:
+                filename = input(f"[Error] la receta '{filename.upper()}' ya existe. Vuelve a intentarlo: ")
         else:
             clean()
             print(f">> Crear Receta >>")
