@@ -48,14 +48,8 @@ def create_recipe():
 
         # recetas
         while not validate_name(filename) or filename == "cancelar" or new_path in current_list:
-
-            # Comprobamos si ya existe
-            new_path = str(Path(category_selected, filename + ".txt")).lower()
-            current_list = list(map(lambda x: str(x).lower(), list_recipes))
-
             if filename == "cancelar":
                 break
-
             clean()
             print(f">> Crear Receta >>")
             print(f"[Info] leyendo recetas en {category_selected}\n")
@@ -65,6 +59,8 @@ def create_recipe():
                 filename = input(f"[Error] el nombre '{filename}' no es valido. Vuelve a intentarlo: ")
             elif new_path in current_list:
                 filename = input(f"[Error] la receta '{filename.upper()}' ya existe. Vuelve a intentarlo: ")
+            # Comprobamos si ya existe
+            new_path = str(Path(category_selected, filename + ".txt")).lower()
         else:
             clean()
             print(f">> Crear Receta >>")
@@ -97,13 +93,8 @@ def create_category():
 
     # categorias
     while not validate_name(foldername) or foldername == "cancelar" or new_path in current_list:
-        # Comprobamos si ya existe
-        new_path = str(Path(base_path(), foldername)).lower()
-        current_list = list(map(lambda x: str(x).lower(), list_categories))
-
         if foldername == "cancelar":
             break
-
         clean()
         print(f">> Crear Categoria >>")
         print(f"[Info] leyendo categorias en {base_path()}\n")
@@ -113,6 +104,8 @@ def create_category():
             foldername = input(f"[Error] el nombre '{foldername}' no es valido. Vuelve a intentarlo: ")
         elif new_path in current_list:
             foldername = input(f"[Error] la categoria '{foldername.upper()}' ya existe. Vuelve a intentarlo: ")
+        # Comprobamos si ya existe
+        new_path = str(Path(base_path(), foldername)).lower()
     else:
         if foldername != "cancelar":
             clean()
