@@ -22,6 +22,7 @@ def validate_option(input, min, max):
 
 def validate_name(word):
     """valida que la entrada contenga solo letras"""
+    word = word.replace(" ", "")
     if word.isalpha():
         return True
     else:
@@ -49,6 +50,19 @@ def show_recipes(list_recipes):
     else:
         for index, element in enumerate(list_recipes):
             print(f"{index} - {Path(element).stem}")
+        print("")
+
+
+def show_recipes_short(list_recipes, *extra_info):
+    """muestra las ultimas recetas disponibles, añadiendo una info adicional"""
+    if len(list_recipes) == 0:
+        print("[Info] no hay recetas disponibles")
+    else:
+        for element in list_recipes[-3:]:
+            print(f"{list_recipes.index(element)} - {Path(element).stem}")
+        if len(extra_info) != 0:
+            for inf in extra_info:
+                print(inf)
         print("")
 
 

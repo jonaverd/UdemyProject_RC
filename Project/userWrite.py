@@ -4,7 +4,7 @@ from userTools import *
 def use_writefile(filename, content):
     """crea un archivo, lo lee y lo cierra"""
     file = open(filename, 'w')
-    file.write(content)
+    file.write(str(content))
     file.close()
 
 
@@ -33,20 +33,20 @@ def create_recipe():
         clean()
         print(f">> Crear Receta >>")
         print(f"[Info] leyendo recetas en {category_selected}\n")
-        show_recipes(list_recipes)
+        show_recipes_short(list_recipes, f"{len(list_recipes)} - Nueva receta...")
         print(f"[Info] introduce «cancelar» para salir")
         filename = input("[Entrada] introduce un nombre para crear: ")
 
         # Comprobamos si ya existe
-        possible_path = str(Path(category_selected, filename + ".txt")).lower()
-        possible_list = list(map(lambda x: str(x).lower(), list_recipes))
+        new_path = str(Path(category_selected, filename + ".txt")).lower()
+        current_list = list(map(lambda x: str(x).lower(), list_recipes))
 
         # recetas
-        while not validate_name(filename) or filename == "cancelar" or possible_path in possible_list:
+        while not validate_name(filename) or filename == "cancelar" or new_path in current_list:
 
             # Comprobamos si ya existe
-            possible_path = str(Path(category_selected, filename + ".txt")).lower()
-            possible_list = list(map(lambda x: str(x).lower(), list_recipes))
+            new_path = str(Path(category_selected, filename + ".txt")).lower()
+            current_list = list(map(lambda x: str(x).lower(), list_recipes))
 
             if filename == "cancelar":
                 break
@@ -54,11 +54,11 @@ def create_recipe():
             clean()
             print(f">> Crear Receta >>")
             print(f"[Info] leyendo recetas en {category_selected}\n")
-            show_recipes(list_recipes)
+            show_recipes_short(list_recipes, f"{len(list_recipes)} - Nueva receta...")
             print(f"[Info] introduce «cancelar» para salir")
             if not validate_name(filename):
                 filename = input(f"[Error] el nombre '{filename}' no es valido. Vuelve a intentarlo: ")
-            elif possible_path in possible_list:
+            elif new_path in current_list:
                 filename = input(f"[Error] la receta '{filename.upper()}' ya existe. Vuelve a intentarlo: ")
         else:
             clean()
