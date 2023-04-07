@@ -83,3 +83,17 @@ def show_categories(list_categories):
         for index, element in enumerate(list_categories):
             print(f"{index} - {Path(element).name}")
         print("")
+
+
+def show_categories_short(list_categories, *extra_info):
+    """muestra las ultimas categorias disponibles, añadiendo una info adicional"""
+    if len(list_categories) == 0:
+        print("[Info] no hay categorias disponibles")
+    else:
+        print("(...)")
+        for element in list_categories[-3:]:
+            print(f"{list_categories.index(element)} - {Path(element).stem}")
+        if len(extra_info) != 0:
+            for inf in extra_info:
+                print(inf)
+        print("")

@@ -45,6 +45,22 @@
 
 ![](readme3.png)
 
+- Se puede refactorizar mejor el código «duplicaciones entre recetas y categorias»
+
+```python
+def show_recipes(list_recipes)
+def show_categories(list_categories)
+def show_recipes_short(list_recipes, *extra_info)
+def show_categories_short(list_categories, *extra_info)
+```
+
+- En el caso de comprobar si existe ese archivo o carpeta, nuestro código es mejor porque no le importa si es mayúscula o minúscula. En Python existen funciones mucho más sencillas que no lo tienen en cuenta: 
+
+```python
+import os
+os.path.exists(path)
+```
+
 
 
 ### Proyecto

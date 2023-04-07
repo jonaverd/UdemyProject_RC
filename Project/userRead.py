@@ -13,7 +13,7 @@ def read_recipe():
     """lee la receta de un archivo"""
     list_categories = categories()
     print(f">> Leer Receta >>")
-    print(f"[Info] leyendo recetas en {base_path()}\n")
+    print(f"[Info] leyendo categorias en {base_path()}\n")
     show_categories(list_categories)
     print(f"[Info] introduce «cancelar» para salir")
     option = input("[Entrada] elige una categoria: ")
@@ -24,7 +24,7 @@ def read_recipe():
             break
         clean()
         print(f">> Leer Receta >>")
-        print(f"[Info] leyendo recetas en {base_path()}\n")
+        print(f"[Info] leyendo categorias en {base_path()}\n")
         show_categories(list_categories)
         print(f"[Info] introduce «cancelar» para salir")
         option = input("[Entrada] elige una categoria: ")

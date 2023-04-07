@@ -48,8 +48,8 @@ def manager(user):
 
         elif option == '3':
             clean()
-            print("hey")
-            input("<< pulsa para volver >> ")
+            create_category()
+            input("\n<< pulsa para volver >> ")
 
         elif option == '4':
             clean()
