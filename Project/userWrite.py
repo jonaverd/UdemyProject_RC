@@ -33,9 +33,9 @@ def create_recipe():
         clean()
         print(f">> Crear Receta >>")
         print(f"[Info] leyendo recetas en {category_selected}\n")
-        show_recipes_short(list_recipes, f"{len(list_recipes)} - Nueva receta...")
+        show_recipes_short(list_recipes, f"» Nueva Receta »")
         print(f"[Info] introduce «cancelar» para salir")
-        filename = input("[Entrada] introduce un nombre para crear: ")
+        filename = input(f"[Entrada] introduce un nombre para crear ({len(list_recipes)}): ")
 
         # Comprobamos si ya existe
         new_path = str(Path(category_selected, filename + ".txt")).lower()
@@ -54,7 +54,7 @@ def create_recipe():
             clean()
             print(f">> Crear Receta >>")
             print(f"[Info] leyendo recetas en {category_selected}\n")
-            show_recipes_short(list_recipes, f"{len(list_recipes)} - Nueva receta...")
+            show_recipes_short(list_recipes, f"» Nueva Receta »")
             print(f"[Info] introduce «cancelar» para salir")
             if not validate_name(filename):
                 filename = input(f"[Error] el nombre '{filename}' no es valido. Vuelve a intentarlo: ")

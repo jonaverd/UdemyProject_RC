@@ -58,6 +58,7 @@ def show_recipes_short(list_recipes, *extra_info):
     if len(list_recipes) == 0:
         print("[Info] no hay recetas disponibles")
     else:
+        print("(...)")
         for element in list_recipes[-3:]:
             print(f"{list_recipes.index(element)} - {Path(element).stem}")
         if len(extra_info) != 0:
