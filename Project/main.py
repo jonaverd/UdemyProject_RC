@@ -1,6 +1,6 @@
-from userTools import *
 from userRead import *
 from userWrite import *
+from userDelete import *
 
 
 def register():
@@ -53,13 +53,13 @@ def manager(user):
 
         elif option == '4':
             clean()
-            print("hey")
-            input("<< pulsa para volver >> ")
+            delete_recipe()
+            input("\n<< pulsa para volver >> ")
 
         elif option == '5':
             clean()
-            print("hey")
-            input("<< pulsa para volver >> ")
+            delete_category()
+            input("\n<< pulsa para volver >> ")
 
         clean()
         options(user)

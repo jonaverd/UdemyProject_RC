@@ -85,3 +85,4 @@ os.path.exists(path)
 
 - Darle uso al usuario (cada uno con su carpeta de recetas)
 - Una opción para editar recetas ya creadas
+- Imprimir más dialogos de confirmación al crear o borrar
