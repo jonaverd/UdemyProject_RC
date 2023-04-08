@@ -70,7 +70,7 @@ os.path.exists(path)
 
 - Ejecución desde la salida de la consola
 
-![](project0.png)
+![](project.png)
 
 ### Instrucciones
 
