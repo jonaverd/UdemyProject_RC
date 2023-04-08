@@ -52,6 +52,9 @@ def show_recipes(list_recipes)
 def show_categories(list_categories)
 def show_recipes_short(list_recipes, *extra_info)
 def show_categories_short(list_categories, *extra_info)
+def delete_recipe()
+def read_recipe()
+def delete_category()
 ```
 
 - En el caso de comprobar si existe ese archivo o carpeta, nuestro código es mejor porque no le importa si es mayúscula o minúscula. En Python existen funciones mucho más sencillas que no lo tienen en cuenta: 
@@ -61,7 +64,7 @@ import os
 os.path.exists(path)
 ```
 
-
+- Bucle cuando no hay recetas disponibles que elegir
 
 ### Proyecto
 - Estructura de carpetas
@@ -86,3 +89,4 @@ os.path.exists(path)
 - Darle uso al usuario (cada uno con su carpeta de recetas)
 - Una opción para editar recetas ya creadas
 - Imprimir más dialogos de confirmación al crear o borrar
+- Más comprobaciones

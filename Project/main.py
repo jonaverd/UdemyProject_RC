@@ -4,6 +4,7 @@ from userDelete import *
 
 
 def register():
+    clean()
     """comprueba si la entrada es un nombre con formato valido"""
     print(">> Registro >>")
     username = input("[Entrada] introduce tu nombre: ")
@@ -67,8 +68,8 @@ def manager(user):
 
     else:
         clean()
-        print(">> Finalizar >>")
-        print("[Salida] hasta luego")
+        print(">> Finalizar >>\n")
+        print("[Salida] sesion finalizada")
 
 
 def main():
