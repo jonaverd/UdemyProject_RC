@@ -79,3 +79,9 @@ os.path.exists(path)
 -  Vincular cuenta de GitHub
 
 ![](readme2.png)
+
+
+### Posibles mejoras
+
+- Darle uso al usuario (cada uno con su carpeta de recetas)
+- Una opción para editar recetas ya creadas
