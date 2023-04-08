@@ -20,7 +20,7 @@ def read_recipe():
 
     # categorias
     while not validate_option(option, 0, len(list_categories) - 1):
-        if option == "cancelar":
+        if cancel(option):
             break
         clean()
         print(f">> Leer Receta >>")
@@ -40,7 +40,7 @@ def read_recipe():
 
         # recetas
         while not validate_option(option, 0, len(list_recipes) - 1):
-            if option == "cancelar":
+            if cancel(option):
                 break
             clean()
             print(f">> Leer Receta >>")
