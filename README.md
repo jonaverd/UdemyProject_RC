@@ -65,6 +65,7 @@ os.path.exists(path)
 ```
 
 - Bucle cuando no hay recetas disponibles que elegir
+- A la hora de guardar recetas (escribir archivos) debería dejar escribir más lineas
 
 ### Proyecto
 - Estructura de carpetas
